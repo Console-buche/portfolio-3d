@@ -1,0 +1,27 @@
+name: Continuous integration
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-image:
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Log in to registry
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u $ --password-stdin
+
+      - name: Build the Docker image
+        uses: docker/build-push-action@v2
+        with:
+          context: ${{ matrix.component }}
+          file: ${{ matrix.component }}/Dockerfile
+          push: true
+          tags: ghcr.io/${{ github.repository_owner }}/portfolio-3d:${{ github.ref_name }}
