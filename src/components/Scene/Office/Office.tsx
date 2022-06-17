@@ -13,7 +13,6 @@ export function Office(props: IOfficeProps) {
   const [lightPositions, setLightPositions] = React.useState<Vector3[]>([])
 
   const { position } = props
-  console.log(gltf)
 
   React.useEffect(() => {
     gltf.scene.scale.set(0.1, 0.1, 0.1)

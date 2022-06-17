@@ -29,8 +29,6 @@ function PlaneTransition(props: IPlaneTransitionProps) {
     []
   )
 
-  console.log(transitionDirection)
-
   useFrame(({ camera }) => {
     // shaderData.uniforms.time.value += 0.001;
     if (transitionDirection === "up") {
