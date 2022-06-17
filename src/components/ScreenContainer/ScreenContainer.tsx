@@ -1,6 +1,6 @@
 import { styled } from "@stitches/react";
 import * as React from "react";
-import ContainerPadding from "../utils/ContainerPadding";
+import ContainerPadding from "@/utils/ContainerPadding";
 
 export interface IScreenContainerProps {
   children: React.ReactNode;

@@ -1,10 +1,10 @@
 import { observer } from "mobx-react-lite";
 import * as React from "react";
 import { DiscreteInterpolant } from "three";
-import { Project } from "../../assets/types";
-import { useStore } from "../../stores";
+import { Project } from "@/assets/types";
+import { useStore } from "@/stores";
 import { Pill } from "../Pill/Pill";
-import { styled, theme } from "../style/Style.config";
+import { styled, theme } from "@/style/Style.config";
 import { CardTitle } from "../Typography/CardTitle";
 import { handleClickOnCard } from "./handlers";
 

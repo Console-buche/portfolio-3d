@@ -1,7 +1,7 @@
 import { observer } from "mobx-react-lite";
 import * as React from "react";
-import { useStore } from "../../stores";
-import { styled, theme } from "../style/Style.config";
+import { useStore } from "@/stores";
+import { styled, theme } from "@/style/Style.config";
 import Card from "./Card";
 import { SlideshowButton } from "./SlideshowButtons";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";

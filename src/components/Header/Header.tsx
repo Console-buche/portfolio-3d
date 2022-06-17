@@ -1,5 +1,5 @@
 import { styled } from "@stitches/react";
-import { ButtonMenu } from "../Buttons/ButtonMenu";
+import { ButtonMenu } from "@/components/Buttons/ButtonMenu";
 
 interface IAppProps {
   onMenuButtonClicked: () => void;

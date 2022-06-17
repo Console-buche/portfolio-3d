@@ -1,5 +1,5 @@
-import { Project } from "../../assets/types";
-import { StorePortfolio } from "../../stores/StorePortfolio";
+import { Project } from "@/assets/types";
+import { StorePortfolio } from "@/stores/StorePortfolio";
 
 export const handleClickOnCard =
   (store: StorePortfolio) =>

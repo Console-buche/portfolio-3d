@@ -1,5 +1,5 @@
 import { Canvas } from "@react-three/fiber";
-import { useStore } from "../../stores";
+import { useStore } from "@/stores";
 import PlaneTransition from "./PlaneTransition";
 
 interface ISceneTransitionProps {}

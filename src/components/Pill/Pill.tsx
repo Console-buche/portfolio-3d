@@ -1,5 +1,5 @@
 import * as React from "react";
-import { styled } from "../style/Style.config";
+import { styled } from "@/style/Style.config";
 
 interface IPillProps {
   name: string;

@@ -3,7 +3,7 @@ import { useFrame } from "@react-three/fiber";
 import { observer } from "mobx-react-lite";
 import * as React from "react";
 import { Mesh } from "three";
-import { useStore } from "../../stores";
+import { useStore } from "@/stores";
 import { fragmentShader } from "./Shader/FragmentShader";
 import { vertexShader } from "./Shader/VertexShader";
 

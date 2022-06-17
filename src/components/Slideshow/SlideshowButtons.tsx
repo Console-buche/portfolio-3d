@@ -1,5 +1,5 @@
 import * as React from "react";
-import { styled, theme } from "../style/Style.config";
+import { styled, theme } from "@/style/Style.config";
 
 interface ISlideshowButtonProps {
   children: React.ReactNode;

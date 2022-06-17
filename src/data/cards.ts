@@ -1,4 +1,4 @@
-import Assets from "../assets/assets";
+import Assets from "@/assets/assets";
 
 type Tech = "Javascript" | "API" | "HTML" | "CSS" | "WebGl";
 

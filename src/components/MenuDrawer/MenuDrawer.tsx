@@ -1,7 +1,7 @@
 import { styled } from "@stitches/react";
 import { Drawer } from "antd";
 import { observer } from "mobx-react-lite";
-import { useStore } from "../../stores";
+import { useStore } from "@/stores";
 import { handleAnchorClick } from "./handlers";
 
 interface IMenuDrawerProps {
