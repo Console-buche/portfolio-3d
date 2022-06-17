@@ -1,5 +1,5 @@
-import { StorePortfolio } from "../../stores/StorePortfolio";
-import TransitionDirection from "../../stores/types";
+import { StorePortfolio } from "@stores/StorePortfolio";
+import TransitionDirection from "@stores/types";
 
 export const handleAnchorClick =
   (storePorfolio: StorePortfolio) =>
