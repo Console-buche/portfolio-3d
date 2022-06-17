@@ -1,12 +1,12 @@
-import { styled } from "@stitches/react";
-import * as React from "react";
-import ContainerPadding from "../utils/ContainerPadding";
+import { styled } from "@stitches/react"
+import * as React from "react"
+import ContainerPadding from "../utils/ContainerPadding"
 
 export interface IScreenContainerProps {
-  children: React.ReactNode;
-  isMenuOpen?: boolean;
-  id: string;
-  position?: "over";
+  children: React.ReactNode
+  isMenuOpen?: boolean
+  id: string
+  position?: "over"
 }
 
 const StyledContainer = styled("section", {
@@ -23,18 +23,18 @@ const StyledContainer = styled("section", {
       true: {
         position: "absolute",
         transitionDelay: "300ms",
-        transform: "translate3d(-75%,0,0)",
-      },
+        transform: "translate3d(-75%,0,0)"
+      }
     },
     position: {
       over: {
         position: "absolute",
         top: 0,
-        pointerEvents: "none",
-      },
-    },
-  },
-});
+        pointerEvents: "none"
+      }
+    }
+  }
+})
 
 function ScreenContainer(props: IScreenContainerProps) {
   return (
@@ -43,7 +43,7 @@ function ScreenContainer(props: IScreenContainerProps) {
         <section id={props.id}>{props.children}</section>
       </ContainerPadding>
     </StyledContainer>
-  );
+  )
 }
 
-export default ScreenContainer;
+export default ScreenContainer

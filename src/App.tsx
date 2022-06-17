@@ -1,43 +1,31 @@
-import { styled } from "@stitches/react";
-import "antd/dist/antd.css";
-import { observer } from "mobx-react-lite";
-import React from "react";
+import { styled } from "@stitches/react"
+import "antd/dist/antd.css"
+import { observer } from "mobx-react-lite"
+import React from "react"
+import Header from "@components/Header/Header"
+import MenuDrawer from "@components/MenuDrawer/MenuDrawer"
+import Scene from "@components/Scene/Scene"
+import SceneTransition from "@components/SceneTransition/SceneTransition"
+import ScreenContainer from "@components/ScreenContainer/ScreenContainer"
+import ScreenTitle from "@components/ScreenTitle/ScreenTitle"
+import Slideshow from "@components/Slideshow/Slideshow"
 
-import Header from "@components/Header/Header";
-import MenuDrawer from "@components/MenuDrawer/MenuDrawer";
-import Scene from "@components/Scene/Scene";
-import SceneTransition from "@components/SceneTransition/SceneTransition";
-import ScreenContainer from "@components/ScreenContainer/ScreenContainer";
-import ScreenTitle from "@components/ScreenTitle/ScreenTitle";
-import Slideshow from "@components/Slideshow/Slideshow";
-
-import "./index.css";
+import "./index.css"
+import { Jumbotron } from "./components/Jumbotron/Jumbotron"
 
 const StyledAppContainer = styled("main", {
   display: "flex",
-  flexDirection: "column",
-});
-
-const StyledNawak = styled("main", {
-  height: "100%",
-  width: "100%",
-  fontSize: "13rem",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  pointerEvents: "none",
-  flexDirection: "column",
-  fontFamily: "Fascinate",
-});
+  flexDirection: "column"
+})
 
 // REMINDER MERCI MOONCHAK LE LIEN VERS LE PORTFOLIO : https://david-hckh.com/
 
 function App() {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false)
 
   const handleMenuClick = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+    setIsMenuOpen(!isMenuOpen)
+  }
 
   return (
     <>
@@ -47,10 +35,7 @@ function App() {
       <MenuDrawer onClose={handleMenuClick} visible={isMenuOpen} />
       <StyledAppContainer>
         <ScreenContainer id="bureau" position="over">
-          <ScreenTitle>
-            <span>Hi my</span>
-            <span>name is Console_Buche</span>
-          </ScreenTitle>
+          <Jumbotron />
         </ScreenContainer>
         <ScreenContainer id="labo">Le labo avec les bulles</ScreenContainer>
         <ScreenContainer id="projets">
@@ -67,7 +52,7 @@ function App() {
         </ScreenContainer>
       </StyledAppContainer>
     </>
-  );
+  )
 }
 
-export default observer(App);
+export default observer(App)

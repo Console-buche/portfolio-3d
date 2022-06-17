@@ -1,8 +1,8 @@
-import * as React from "react";
-import { styled, theme } from "../style/Style.config";
+import * as React from "react"
+import { styled, theme } from "../style/Style.config"
 
 interface IButtonMenuProps {
-  onClick: () => void;
+  onClick: () => void
 }
 
 const StyledButtonMenu = styled("button", {
@@ -15,8 +15,8 @@ const StyledButtonMenu = styled("button", {
   alignItems: "center",
   justifyContent: "center",
   gap: 5,
-  cursor: "pointer",
-});
+  cursor: "pointer"
+})
 
 const StyledBar = styled("span", {
   height: 4,
@@ -28,30 +28,30 @@ const StyledBar = styled("span", {
     isDiagTop: {
       true: {
         transform: "rotate(45deg)",
-        position: "absolute",
-      },
+        position: "absolute"
+      }
     },
     isHidden: {
       true: {
-        opacity: 0,
-      },
+        opacity: 0
+      }
     },
     isDiagBot: {
       true: {
         transform: "rotate(-45deg)",
-        position: "absolute",
-      },
-    },
-  },
-});
+        position: "absolute"
+      }
+    }
+  }
+})
 
 export function ButtonMenu(props: IButtonMenuProps) {
-  const [isClicked, setIsClicked] = React.useState(false);
+  const [isClicked, setIsClicked] = React.useState(false)
 
   const handleClick = () => {
-    props.onClick();
-    setIsClicked(!isClicked);
-  };
+    props.onClick()
+    setIsClicked(!isClicked)
+  }
 
   return (
     <StyledButtonMenu onClick={handleClick}>
@@ -59,5 +59,5 @@ export function ButtonMenu(props: IButtonMenuProps) {
       <StyledBar isHidden={isClicked} />
       <StyledBar isDiagBot={isClicked} />
     </StyledButtonMenu>
-  );
+  )
 }

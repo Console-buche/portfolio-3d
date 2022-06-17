@@ -1,8 +1,8 @@
-import * as React from "react";
-import { styled, theme } from "../style/Style.config";
+import * as React from "react"
+import { styled, theme } from "../style/Style.config"
 
 interface ISlideshowButtonProps {
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 
 const StyledSlideShowButton = styled("button", {
@@ -12,9 +12,9 @@ const StyledSlideShowButton = styled("button", {
   borderRadius: theme.size.buttonCircle.value,
   display: "flex",
   alignItems: "center",
-  justifyContent: "center",
-});
+  justifyContent: "center"
+})
 
 export function SlideshowButton(props: ISlideshowButtonProps) {
-  return <StyledSlideShowButton {...props} />;
+  return <StyledSlideShowButton {...props} />
 }

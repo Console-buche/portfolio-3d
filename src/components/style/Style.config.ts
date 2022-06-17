@@ -1,18 +1,18 @@
-import { createStitches } from "@stitches/react";
+import { createStitches } from "@stitches/react"
 
 const { styled, css, theme } = createStitches({
   theme: {
     colors: {
       button: "#FF923E",
-      light: "#FFFFFF",
+      light: "#FFFFFF"
     },
     space: {
-      defaultGap: "50px",
+      defaultGap: "50px"
     },
     size: {
-      buttonCircle: "54px",
-    },
-  },
-});
+      buttonCircle: "54px"
+    }
+  }
+})
 
-export { styled, theme };
+export { styled, theme }

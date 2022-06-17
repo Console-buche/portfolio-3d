@@ -4,8 +4,8 @@ export type Project =
   | "sharky"
   | "portfolio"
   | "jelly"
-  | "logo";
+  | "logo"
 
 export interface Asset {
-  pictures: Record<Project, string>;
+  pictures: Record<Project, string>
 }

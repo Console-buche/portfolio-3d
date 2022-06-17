@@ -1,28 +1,27 @@
-import { styled } from "@stitches/react";
-import Assets from "../../assets/assets";
-import { ButtonMenu } from "../Buttons/ButtonMenu";
+import { styled } from "@stitches/react"
+import Assets from "../../assets/assets"
+import { ButtonMenu } from "../Buttons/ButtonMenu"
 
 interface IAppProps {
-  onMenuButtonClicked: () => void;
+  onMenuButtonClicked: () => void
 }
 
 const StyledHeader = styled("header", {
-  position: "absolute",
+  position: "fixed",
   top: 0,
   display: "flex",
   justifyContent: "center",
   width: "100%",
-  zIndex: 9999,
-});
+  zIndex: 9999
+})
 
 const StyledContainerPadding = styled("div", {
   maxWidth: "92rem",
-  // background: "lime",
   height: "50%",
   display: "flex",
   flex: 1,
-  justifyContent: "space-between",
-});
+  justifyContent: "space-between"
+})
 
 function Header(props: IAppProps) {
   return (
@@ -36,7 +35,7 @@ function Header(props: IAppProps) {
         </menu>
       </StyledContainerPadding>
     </StyledHeader>
-  );
+  )
 }
 
-export default Header;
+export default Header
