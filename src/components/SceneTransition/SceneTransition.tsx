@@ -1,11 +1,11 @@
-import { Canvas } from "@react-three/fiber";
-import { useStore } from "../../stores";
-import PlaneTransition from "./PlaneTransition";
+import { Canvas } from "@react-three/fiber"
+import { useStore } from "../../stores"
+import PlaneTransition from "./PlaneTransition"
 
 interface ISceneTransitionProps {}
 
 function SceneTransition(props: ISceneTransitionProps) {
-  const { storePortfolio } = useStore();
+  const { storePortfolio } = useStore()
   return (
     <Canvas
       style={{
@@ -13,12 +13,12 @@ function SceneTransition(props: ISceneTransitionProps) {
         width: "100vw",
         position: "fixed",
         pointerEvents: "none",
-        zIndex: 999,
+        zIndex: 999
       }}
     >
       <PlaneTransition />
     </Canvas>
-  );
+  )
 }
 
-export default SceneTransition;
+export default SceneTransition

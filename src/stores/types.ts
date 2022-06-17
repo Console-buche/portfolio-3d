@@ -1,7 +1,7 @@
 enum TransitionDirection {
   up = "up",
   down = "down",
-  stopped = "stopped",
+  stopped = "stopped"
 }
 
-export default TransitionDirection;
+export default TransitionDirection

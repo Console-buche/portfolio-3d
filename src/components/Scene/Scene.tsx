@@ -1,20 +1,20 @@
-import { PerspectiveCamera } from "@react-three/drei";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { styled } from "@stitches/react";
-import * as React from "react";
-import { Vector3 } from "three";
-import Box from "./Box/Box";
-import { Office } from "./Office/Office";
-import { PerspectiveCam } from "./PerspectiveCam";
-import { Rain } from "./Rain";
+import { PerspectiveCamera } from "@react-three/drei"
+import { Canvas, useFrame } from "@react-three/fiber"
+import { styled } from "@stitches/react"
+import * as React from "react"
+import { Vector3 } from "three"
+import Box from "./Box/Box"
+import { Office } from "./Office/Office"
+import { PerspectiveCam } from "./PerspectiveCam"
+import { Rain } from "./Rain"
 
 interface ISceneProps {
-  isMenuOpen: boolean;
+  isMenuOpen: boolean
 }
 
-const StyledCanvasContainer = styled("span", {});
+const StyledCanvasContainer = styled("span", {})
 
-const officePosition = new Vector3(3, 0, 0);
+const officePosition = new Vector3(3, 0, 0)
 
 function Scene(props: ISceneProps) {
   return (
@@ -32,7 +32,7 @@ function Scene(props: ISceneProps) {
         <Office position={officePosition} />
       </Canvas>
     </StyledCanvasContainer>
-  );
+  )
 }
 
-export default Scene;
+export default Scene

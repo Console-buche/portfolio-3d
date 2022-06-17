@@ -1,5 +1,5 @@
-import * as React from "react";
-import { styled, theme } from "../style/Style.config";
+import * as React from "react"
+import { styled, theme } from "../style/Style.config"
 
 interface ICtaButtonProps {}
 
@@ -11,8 +11,8 @@ const StyledCtaButton = styled("button", {
   padding: "15px 30px",
   fontSize: 20,
   borderRadius: 35,
-  width: "fit-content",
-});
+  width: "fit-content"
+})
 export function CtaButton(props: ICtaButtonProps) {
-  return <StyledCtaButton>Get in touch</StyledCtaButton>;
+  return <StyledCtaButton>Get in touch</StyledCtaButton>
 }

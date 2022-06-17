@@ -1,7 +1,7 @@
-import { styled } from "../style/Style.config";
+import { styled } from "../style/Style.config"
 
 interface IPillProps {
-  name: string;
+  name: string
 }
 
 const StyledPill = styled("div", {
@@ -16,13 +16,13 @@ const StyledPill = styled("div", {
       primary: {
         border: "none",
         background: "#FFB800",
-        color: "#FFF",
+        color: "#FFF"
       },
-      secondary: { border: "none", background: "#8433cc", color: "#FFF" },
-    },
-  },
-});
+      secondary: { border: "none", background: "#8433cc", color: "#FFF" }
+    }
+  }
+})
 
 export function Pill(props: IPillProps) {
-  return <StyledPill>{props.name}</StyledPill>;
+  return <StyledPill>{props.name}</StyledPill>
 }
