@@ -9,7 +9,7 @@ interface IOfficeProps {
 }
 
 export function Office(props: IOfficeProps) {
-  const gltf = useLoader(GLTFLoader, "/V3.5.gltf")
+  const gltf = useLoader(GLTFLoader, "/src/assets/gltf/V3.5.gltf")
   const [lightPositions, setLightPositions] = React.useState<Vector3[]>([])
 
   const { position } = props
