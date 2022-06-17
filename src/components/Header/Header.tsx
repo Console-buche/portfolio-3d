@@ -1,4 +1,5 @@
 import { styled } from "@stitches/react";
+import Assets from "../../assets/assets";
 import { ButtonMenu } from "../Buttons/ButtonMenu";
 
 interface IAppProps {
@@ -27,9 +28,8 @@ function Header(props: IAppProps) {
   return (
     <StyledHeader id={"bureau"}>
       <StyledContainerPadding>
-        <div>Logo</div>
+        <img src={Assets.pictures.logo} width={64} />
         <menu style={{ display: "flex" }}>
-          {/* <li>Bouton 1</li> */}
           <li>
             <ButtonMenu onClick={props.onMenuButtonClicked} />
           </li>
