@@ -34,7 +34,7 @@ function ScreenTitle(props: IScreenTitleProps) {
       <dt>{props.screenName}</dt>
       <StyledTitle>
         {React.Children.toArray(props.children).map((boutDphrase) => (
-          <h2>{boutDphrase}</h2>
+          <h2 key={boutDphrase}>{boutDphrase}</h2>
         ))}
         <StyledSubtitle>{props.subtitle}</StyledSubtitle>
       </StyledTitle>

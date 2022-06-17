@@ -7,7 +7,7 @@ interface IAppProps {
 }
 
 const StyledHeader = styled("header", {
-  position: "absolute",
+  position: "fixed",
   top: 0,
   display: "flex",
   justifyContent: "center",
@@ -17,7 +17,6 @@ const StyledHeader = styled("header", {
 
 const StyledContainerPadding = styled("div", {
   maxWidth: "92rem",
-  // background: "lime",
   height: "50%",
   display: "flex",
   flex: 1,
