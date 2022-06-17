@@ -30,6 +30,13 @@ const StyledNawak = styled("main", {
   fontFamily: "Fascinate",
 });
 
+const StyledBgTitre = styled("span", {
+  background: "orange",
+  color: "white",
+  letterSpacing: "2px",
+  padding: "0 10px",
+});
+
 // REMINDER MERCI MOONCHAK LE LIEN VERS LE PORTFOLIO : https://david-hckh.com/
 
 function App() {
@@ -47,9 +54,11 @@ function App() {
       <MenuDrawer onClose={handleMenuClick} visible={isMenuOpen} />
       <StyledAppContainer>
         <ScreenContainer id="bureau" position="over">
-          <ScreenTitle>
+          <ScreenTitle subtitle="Banane un mot prepuce community omnivore honeybadger chapiteau grange">
             <span>Hi my</span>
-            <span>name is Console_Buche</span>
+            <span>
+              I name is <StyledBgTitre>Console_Buche</StyledBgTitre>
+            </span>
           </ScreenTitle>
         </ScreenContainer>
         <ScreenContainer id="labo">Le labo avec les bulles</ScreenContainer>
