@@ -1,9 +1,5 @@
-import { Plane } from "@react-three/drei";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { styled } from "@stitches/react";
-import { useNavigate } from "react-router-dom";
+import { Canvas } from "@react-three/fiber";
 import { useStore } from "../../stores";
-import { PerspectiveCam } from "../Scene/PerspectiveCam";
 import PlaneTransition from "./PlaneTransition";
 
 interface ISceneTransitionProps {}

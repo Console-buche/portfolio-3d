@@ -1,7 +1,5 @@
-import THREE, { MeshProps, useFrame, useThree } from "@react-three/fiber";
-import React, { useRef, useEffect } from "react";
-import * as three from "three";
-import { Mesh, MeshBasicMaterial } from "three";
+import React, { useRef } from "react";
+import { Mesh } from "three";
 
 interface IBoxProps {
   // velocity: number;

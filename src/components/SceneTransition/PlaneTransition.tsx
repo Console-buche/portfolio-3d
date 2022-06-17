@@ -1,9 +1,8 @@
 import { Plane } from "@react-three/drei";
-import { MeshProps, useFrame } from "@react-three/fiber";
+import { useFrame } from "@react-three/fiber";
 import { observer } from "mobx-react-lite";
 import * as React from "react";
-import { DoubleSide, Euler, Mesh, Vector2, Vector3 } from "three";
-import { glsl } from "../../helpers/glsl";
+import { Mesh } from "three";
 import { useStore } from "../../stores";
 import { fragmentShader } from "./Shader/FragmentShader";
 import { vertexShader } from "./Shader/VertexShader";

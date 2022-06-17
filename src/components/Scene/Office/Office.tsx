@@ -1,11 +1,8 @@
+import { useLoader } from "@react-three/fiber";
 import * as React from "react";
-import { useFrame, useLoader } from "@react-three/fiber";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { CatmullRomCurve3, Vector3 } from "three";
-import bufferToVector3, {
-  bufferToVector3_neo,
-} from "../../utils/bufferToVector3";
-import Box from "../Box/Box";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { bufferToVector3_neo } from "../../utils/bufferToVector3";
 
 interface IOfficeProps {
   position: Vector3;

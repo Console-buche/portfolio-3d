@@ -1,7 +1,5 @@
 import { styled } from "@stitches/react";
-import * as React from "react";
 import { ButtonMenu } from "../Buttons/ButtonMenu";
-import ContainerPadding from "../utils/ContainerPadding";
 
 interface IAppProps {
   onMenuButtonClicked: () => void;

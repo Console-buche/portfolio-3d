@@ -1,5 +1,5 @@
 import { createContext, useContext } from "react";
-import Store, { StorePortfolio } from "./StorePortfolio";
+import Store from "./StorePortfolio";
 
 export const stores = {
   storePortfolio: Store,

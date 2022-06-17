@@ -1,9 +1,6 @@
 import { styled } from "@stitches/react";
 import { Drawer } from "antd";
 import { observer } from "mobx-react-lite";
-import * as React from "react";
-import { useRef } from "react";
-import { NavLink, useLocation } from "react-router-dom";
 import { useStore } from "../../stores";
 import { handleAnchorClick } from "./handlers";
 

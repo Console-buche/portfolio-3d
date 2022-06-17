@@ -1,5 +1,4 @@
 import { action, computed, makeObservable, observable } from "mobx";
-import { Project } from "../assets/types";
 import cardsData, { ICard } from "../data/cards";
 import TransitionDirection from "./types";
 
