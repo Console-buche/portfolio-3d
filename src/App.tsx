@@ -2,13 +2,15 @@ import { styled } from "@stitches/react";
 import "antd/dist/antd.css";
 import { observer } from "mobx-react-lite";
 import React from "react";
-import Header from "./components/Header/Header";
-import MenuDrawer from "./components/MenuDrawer/MenuDrawer";
-import Scene from "./components/Scene/Scene";
-import SceneTransition from "./components/SceneTransition/SceneTransition";
-import ScreenContainer from "./components/ScreenContainer/ScreenContainer";
-import ScreenTitle from "./components/ScreenTitle/ScreenTitle";
-import Slideshow from "./components/Slideshow/Slideshow";
+
+import Header from "@components/Header/Header";
+import MenuDrawer from "@components/MenuDrawer/MenuDrawer";
+import Scene from "@components/Scene/Scene";
+import SceneTransition from "@components/SceneTransition/SceneTransition";
+import ScreenContainer from "@components/ScreenContainer/ScreenContainer";
+import ScreenTitle from "@components/ScreenTitle/ScreenTitle";
+import Slideshow from "@components/Slideshow/Slideshow";
+
 import "./index.css";
 
 const StyledAppContainer = styled("main", {
