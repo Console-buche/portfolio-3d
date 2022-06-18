@@ -1,4 +1,5 @@
 import { useMousePosition } from "@/hooks/mousePosition"
+import { Position } from "@react-three/drei/helpers/Position";
 import { useFrame } from "@react-three/fiber"
 import { createRef, useEffect, useState } from "react";
 import { styled, theme } from "../style/Style.config"
@@ -16,7 +17,7 @@ export function CursorPoint(props: ICursorPointProps) {
   const position = useMousePosition();
   let [x, setX] = useState(0)
   let [y, setY] = useState(0)
-
+  let [isHover, setHover] = useState(false);
   const step = 0.2
   const size = 15
   let CursorPointElement = styled("span", {
@@ -27,14 +28,40 @@ export function CursorPoint(props: ICursorPointProps) {
     height: size+"px",
     width: size+"px",
     borderRadius: "15px",
-    backgroundColor: theme.colors.button.value
+    pointerEvents: "none",
+    backgroundColor: theme.colors.button.value,
+    transition: "all 2s",
+    variants: {
+      hover: {
+        true: {
+          backgroundColor:"transparent",
+          border: "3px solid black",
+          height: size*1.5+"px",
+          width: size*1.5+"px",
+        }
+      }
+    }
   })
-  setTimeout(() => {
-    setX(lerp(x, position.x - size/2, step));
-    setY(lerp(y, position.y - size/2, step));
-  }, 15)
+  useEffect(() => {
+      setX(lerp(x, position.x - size/2, step));
+      setY(lerp(y, position.y - size/2, step));
+    
+  }, [position]);
+
+  useEffect(() => {
+    const mouseOver = (e:MouseEvent) => {
+      if (e.target instanceof Element) {
+        setHover(window.getComputedStyle(e.target)["cursor"] == "pointer");
+      }
+      
+    }
+    document.addEventListener("mouseover", mouseOver)
+    return () => {
+      document.removeEventListener("mouseover", mouseOver)
+    }
+  }, [])
 
   return (
-    <CursorPointElement/>
+    <CursorPointElement hover={isHover}/>
   )
 }
