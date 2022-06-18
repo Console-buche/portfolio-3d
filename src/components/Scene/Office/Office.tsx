@@ -24,6 +24,7 @@ export function Office(props: IOfficeProps) {
       gltf.scene.children[i].receiveShadow = true;
     });
 
+    // @ts-expect-error We should find the correct type for this
     const positionBuffer = gltf.scene.children[14].geometry.attributes.position.array;
 
     const lightsPositionsAsVector3 = bufferToVector3_neo({
