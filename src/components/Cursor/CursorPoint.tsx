@@ -17,12 +17,10 @@ const step = 0.2
 
 let CursorPointElement = styled("span", {
   position: "fixed",
-  display:"block",
   height: size+"px",
   width: size+"px",
   borderRadius: "15px",
   pointerEvents: "none",
-  border: "0px solid "+theme.colors.button.value,
   backgroundColor: theme.colors.button.value,
   transform: "scale(1)",
   transition: "transform .2s",
