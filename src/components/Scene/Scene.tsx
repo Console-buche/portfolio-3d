@@ -19,7 +19,7 @@ const officePosition = new Vector3(3, 0, 0)
 function Scene(props: ISceneProps) {
   return (
     <StyledCanvasContainer>
-      <Canvas style={{ height: "100vh", width: "100vw" }} shadows>
+      <Canvas style={{ height: "100vh", width: "100vw"}} shadows>
         <PerspectiveCam />
         <directionalLight
           position={[0, 3, 0]}

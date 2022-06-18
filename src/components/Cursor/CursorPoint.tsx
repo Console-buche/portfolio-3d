@@ -1,7 +1,7 @@
 import { useMousePosition } from "@/hooks/mousePosition"
 import { Position } from "@react-three/drei/helpers/Position";
 import { useFrame } from "@react-three/fiber"
-import { createRef, useEffect, useState } from "react";
+import { createRef, useEffect, useRef, useState } from "react";
 import { styled, theme } from "../style/Style.config"
 
 interface ICursorPointProps {
@@ -12,41 +12,60 @@ function lerp (start: number, end: number, amt: number){
   return (1-amt)*start+amt*end
 }
 
+const size = 15
+let CursorPointElement = styled("span", {
+  position: "fixed",
+  display:"block",
+  height: size+"px",
+  width: size+"px",
+  borderRadius: "15px",
+  pointerEvents: "none",
+  border: "0px solid "+theme.colors.button.value,
+  backgroundColor: theme.colors.button.value,
+  transform: "scale(1)",
+  transition: "transform .2s",
+  zIndex: 10000,
+  variants: {
+    hover: {
+      true: {
+        backgroundColor:"transparent",
+        border: "2px solid black",
+        transform: "scale(1.5)"
+      }
+    }
+  }
+})
+
 export function CursorPoint(props: ICursorPointProps) {
 
   const position = useMousePosition();
-  let [x, setX] = useState(0)
-  let [y, setY] = useState(0)
+  let x = useRef(0);
+  let y = useRef(0);
   let [isHover, setHover] = useState(false);
   const step = 0.2
-  const size = 15
-  let CursorPointElement = styled("span", {
-    position: "fixed",
-    top: y+"px",
-    left: x+"px",
-    display:"block",
-    height: size+"px",
-    width: size+"px",
-    borderRadius: "15px",
-    pointerEvents: "none",
-    backgroundColor: theme.colors.button.value,
-    transition: "all 2s",
-    variants: {
-      hover: {
-        true: {
-          backgroundColor:"transparent",
-          border: "3px solid black",
-          height: size*1.5+"px",
-          width: size*1.5+"px",
-        }
-      }
-    }
-  })
+  let pointRef = useRef<typeof CursorPointElement>(null)
+
+
   useEffect(() => {
-      setX(lerp(x, position.x - size/2, step));
-      setY(lerp(y, position.y - size/2, step));
-    
+    const interval = setInterval(()=> {
+          x.current = lerp(x.current, position.x - size/2, step);
+          y.current = lerp(y.current, position.y - size/2, step);
+          if (pointRef.current != null) {
+            if (pointRef.current instanceof HTMLElement) {
+              pointRef.current.style.top = y.current+"px";
+              pointRef.current.style.left = x.current+"px";
+            }
+
+
+          }
+        
+      }, 10);
+    return () => {
+      clearInterval(interval);
+    };
   }, [position]);
+  
+  
 
   useEffect(() => {
     const mouseOver = (e:MouseEvent) => {
@@ -61,7 +80,9 @@ export function CursorPoint(props: ICursorPointProps) {
     }
   }, [])
 
+  console.log("RE")
+
   return (
-    <CursorPointElement hover={isHover}/>
+    <CursorPointElement ref={pointRef} hover={isHover}/>
   )
 }
