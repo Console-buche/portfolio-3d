@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { styled } from '@stitches/react';
 import 'antd/dist/antd.css';
 import { observer } from 'mobx-react-lite';
@@ -12,6 +13,7 @@ import Slideshow from '@components/Slideshow/Slideshow';
 
 import './index.css';
 import { Jumbotron } from './components/Jumbotron/Jumbotron';
+import { CursorPoint } from './components/Cursor/CursorPoint';
 
 const StyledAppContainer = styled('main', {
   display: 'flex',
@@ -51,6 +53,7 @@ function App() {
           </ScreenTitle>
         </ScreenContainer>
       </StyledAppContainer>
+      <CursorPoint />
     </>
   );
 }
