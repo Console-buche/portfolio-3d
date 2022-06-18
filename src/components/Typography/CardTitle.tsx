@@ -1,9 +1,9 @@
-import * as React from "react"
+import * as React from 'react';
 
 interface ICardTitleProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 export function CardTitle(props: ICardTitleProps) {
-  return <h3>{props.children}</h3>
+  return <h3>{props.children}</h3>;
 }
