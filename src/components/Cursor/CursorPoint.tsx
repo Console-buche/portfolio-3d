@@ -19,10 +19,9 @@ let CursorPointElement = styled("span", {
   position: "fixed",
   height: size+"px",
   width: size+"px",
-  borderRadius: "15px",
+  borderRadius: "50%",
   pointerEvents: "none",
   backgroundColor: theme.colors.button.value,
-  transform: "scale(1)",
   transition: "transform .2s",
   zIndex: 10000,
   variants: {
