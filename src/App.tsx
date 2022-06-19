@@ -12,6 +12,7 @@ import Slideshow from "@components/Slideshow/Slideshow"
 
 import "./index.css"
 import { Jumbotron } from "./components/Jumbotron/Jumbotron"
+import { CursorPoint } from "./components/Cursor/CursorPoint"
 
 const StyledAppContainer = styled("main", {
   display: "flex",
@@ -51,6 +52,7 @@ function App() {
           </ScreenTitle>
         </ScreenContainer>
       </StyledAppContainer>
+      <CursorPoint/>
     </>
   )
 }
