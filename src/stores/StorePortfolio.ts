@@ -39,8 +39,14 @@ export class StorePortfolio {
   }
 
   @action
-  updateViewMode(mode: ViewMode) {
-    this.$viewMode.set(mode);
+  toggleViewMode() {
+    switch (this.viewMode) {
+      case ViewMode.normal:
+        return this.$viewMode.set(ViewMode.twitchCam);
+
+      default:
+        return this.$viewMode.set(ViewMode.normal);
+    }
   }
 
   /**

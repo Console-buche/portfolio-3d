@@ -2,6 +2,7 @@ import { useStore } from '@/stores';
 import { styled } from '@stitches/react';
 import Assets from '../../assets/assets';
 import { ButtonMenu } from '../Buttons/ButtonMenu';
+import { handleViewModeToggle } from './handlers';
 
 interface IAppProps {
   onMenuButtonClicked: () => void;
@@ -32,7 +33,7 @@ function Header(props: IAppProps) {
         <img src={Assets.pictures.logo} width={64} />
         <menu style={{ display: 'flex', gap: 20, alignItems: 'center' }}>
           <li>
-            <button onClick={() => console.log('CHANGE CAM')}>TWITCH SCREEN</button>
+            <button onClick={handleViewModeToggle(storePortfolio)}>TWITCH SCREEN</button>
           </li>
           <li>
             <ButtonMenu onClick={props.onMenuButtonClicked} />
