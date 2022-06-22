@@ -1,31 +1,31 @@
-import { styled } from "@stitches/react"
-import "antd/dist/antd.css"
-import { observer } from "mobx-react-lite"
-import React from "react"
-import Header from "@components/Header/Header"
-import MenuDrawer from "@components/MenuDrawer/MenuDrawer"
-import Scene from "@components/Scene/Scene"
-import SceneTransition from "@components/SceneTransition/SceneTransition"
-import ScreenContainer from "@components/ScreenContainer/ScreenContainer"
-import ScreenTitle from "@components/ScreenTitle/ScreenTitle"
-import Slideshow from "@components/Slideshow/Slideshow"
+import { styled } from '@stitches/react';
+import 'antd/dist/antd.css';
+import { observer } from 'mobx-react-lite';
+import React from 'react';
+import Header from '@components/Header/Header';
+import MenuDrawer from '@components/MenuDrawer/MenuDrawer';
+import Scene from '@components/Scene/Scene';
+import SceneTransition from '@components/SceneTransition/SceneTransition';
+import ScreenContainer from '@components/ScreenContainer/ScreenContainer';
+import ScreenTitle from '@components/ScreenTitle/ScreenTitle';
+import Slideshow from '@components/Slideshow/Slideshow';
 
-import "./index.css"
-import { Jumbotron } from "./components/Jumbotron/Jumbotron"
+import './index.css';
+import { Jumbotron } from './components/Jumbotron/Jumbotron';
 
-const StyledAppContainer = styled("main", {
-  display: "flex",
-  flexDirection: "column"
-})
+const StyledAppContainer = styled('main', {
+  display: 'flex',
+  flexDirection: 'column'
+});
 
 // REMINDER MERCI MOONCHAK LE LIEN VERS LE PORTFOLIO : https://david-hckh.com/
 
 function App() {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false)
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   const handleMenuClick = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
     <>
@@ -52,7 +52,7 @@ function App() {
         </ScreenContainer>
       </StyledAppContainer>
     </>
-  )
+  );
 }
 
-export default observer(App)
+export default observer(App);
