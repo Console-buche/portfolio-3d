@@ -1,3 +1,4 @@
+import { useStore } from '@/stores';
 import { styled } from '@stitches/react';
 import Assets from '../../assets/assets';
 import { ButtonMenu } from '../Buttons/ButtonMenu';
@@ -24,11 +25,15 @@ const StyledContainerPadding = styled('div', {
 });
 
 function Header(props: IAppProps) {
+  const { storePortfolio } = useStore();
   return (
     <StyledHeader id={'bureau'}>
       <StyledContainerPadding>
         <img src={Assets.pictures.logo} width={64} />
-        <menu style={{ display: 'flex' }}>
+        <menu style={{ display: 'flex', gap: 20, alignItems: 'center' }}>
+          <li>
+            <button onClick={() => console.log('CHANGE CAM')}>TWITCH SCREEN</button>
+          </li>
           <li>
             <ButtonMenu onClick={props.onMenuButtonClicked} />
           </li>
