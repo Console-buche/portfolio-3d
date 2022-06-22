@@ -73,7 +73,7 @@ function SlideShow(props: ISlideSHowProps) {
           display: 'flex',
           justifyContent: 'center',
           alignContent: 'center',
-          gap: theme.size.buttonCircle.value
+          gap: 15
         }}
       >
         <SlideshowButton>{<AiOutlineArrowLeft color="white" size={24} />}</SlideshowButton>
