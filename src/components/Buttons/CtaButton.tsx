@@ -11,7 +11,8 @@ const StyledCtaButton = styled('button', {
   padding: '15px 30px',
   fontSize: 20,
   borderRadius: 35,
-  width: 'fit-content'
+  width: 'fit-content',
+  cursor: 'pointer'
 });
 export function CtaButton(props: ICtaButtonProps) {
   return <StyledCtaButton>Get in touch</StyledCtaButton>;

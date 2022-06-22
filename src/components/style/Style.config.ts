@@ -10,7 +10,8 @@ const { styled, css, theme } = createStitches({
       defaultGap: '50px'
     },
     size: {
-      buttonCircle: '54px'
+      buttonCircle: '54px',
+      cursorSize: 15
     }
   }
 });

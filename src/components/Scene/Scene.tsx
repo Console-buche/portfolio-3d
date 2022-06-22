@@ -1,12 +1,8 @@
-import { PerspectiveCamera } from '@react-three/drei';
-import { Canvas, useFrame } from '@react-three/fiber';
+import { Canvas } from '@react-three/fiber';
 import { styled } from '@stitches/react';
-import * as React from 'react';
 import { Vector3 } from 'three';
-import Box from './Box/Box';
 import { Office } from './Office/Office';
 import { PerspectiveCam } from './PerspectiveCam';
-import { Rain } from './Rain';
 
 interface ISceneProps {
   isMenuOpen: boolean;

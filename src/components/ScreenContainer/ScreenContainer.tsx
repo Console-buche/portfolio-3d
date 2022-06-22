@@ -29,8 +29,7 @@ const StyledContainer = styled('section', {
     position: {
       over: {
         position: 'absolute',
-        top: 0,
-        pointerEvents: 'none'
+        top: 0
       }
     }
   }
