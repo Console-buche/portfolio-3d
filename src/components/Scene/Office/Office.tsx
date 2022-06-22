@@ -40,22 +40,7 @@ export function Office(props: IOfficeProps) {
 
   return (
     <React.Suspense fallback={null}>
-      <primitive object={gltf.scene}>
-        {/* {lightPositions.map((lightPos) => (
-          <Box
-            position={new Vector3(lightPos.x, lightPos.y + 30, lightPos.z)}
-          />
-          //   <pointLight
-          //     color="#FAFA20"
-          //     intensity={0.5}
-          //     position={new Vector3(lightPos.x, lightPos.y + 30, lightPos.z)}
-          //     shadowBias={0.00001}
-          //     shadowMapHeight={2048}
-          //     shadowMapWidth={2048}
-          //     castShadow
-          //   />
-        ))} */}
-      </primitive>
+      <primitive object={gltf.scene}></primitive>
     </React.Suspense>
   );
 }
