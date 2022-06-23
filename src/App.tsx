@@ -12,7 +12,7 @@ import ScreenTitle from '@components/ScreenTitle/ScreenTitle';
 import Slideshow from '@components/Slideshow/Slideshow';
 
 import './index.css';
-import { Jumbotron } from './components/Jumbotron/Jumbotron';
+import Jumbotron from './components/Jumbotron/Jumbotron';
 import { CursorPoint } from './components/Cursor/CursorPoint';
 import Chat from './components/Chat';
 

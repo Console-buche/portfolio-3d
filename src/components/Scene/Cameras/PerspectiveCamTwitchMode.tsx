@@ -13,7 +13,7 @@ interface IPerspectiveCamTwitchModeProps {}
 const step = 0.05;
 // const startPos = new Vector3(6, 3, 5);
 
-const destination = new Vector3(6, 3, 5);
+// const destination = new Vector3(6, 3, 5);
 
 function PerspectiveCamTwitchMode(props: IPerspectiveCamTwitchModeProps) {
   const ref = React.useRef<Camera>();
@@ -24,15 +24,19 @@ function PerspectiveCamTwitchMode(props: IPerspectiveCamTwitchModeProps) {
   useFrame(() => {
     // const { x, y } = normalizeScreenTo3d(lerpedPosition.x, lerpedPosition.y);
 
-    if (ref.current) {
-      //   lookAtPos.lerp(new Vector3(x, y, 0), step);
-      //   ref.current.position.set(lookAtPos.x, lookAtPos.y * -1, lookAtPos.z).add(startPos);
-      const currentPos = storeCamera.currentCameraPosition.clone().lerp(destination, step);
-      const { x, y, z } = currentPos;
-      ref.current.position.set(x, y, z);
-      ref.current?.lookAt(new Vector3(0, -1, -5));
-      storeCamera.updateCurrentCameraPosition(ref.current.position.clone());
+    if (!ref.current) {
+      return null;
     }
+    //   lookAtPos.lerp(new Vector3(x, y, 0), step);
+    //   ref.current.position.set(lookAtPos.x, lookAtPos.y * -1, lookAtPos.z).add(startPos);
+
+    const destination = storeCamera.curveTransition;
+
+    const currentPos = storeCamera.currentCameraPosition.clone().lerp(destination, step);
+    const { x, y, z } = currentPos;
+    ref.current.position.set(x, y, z);
+    ref.current?.lookAt(new Vector3(-3, -2, -5));
+    storeCamera.updateCurrentCameraPosition(ref.current.position.clone());
   });
 
   return <PerspectiveCamera makeDefault ref={ref} />;
