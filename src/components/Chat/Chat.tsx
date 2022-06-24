@@ -23,6 +23,7 @@ const reducer = (state: ChatMessage[], action: Action) => {
   switch (action.type) {
     case ReducerActionType.ADD_MESSAGE:
       const newState = [...state];
+      // never display more than MAX_MESSAGES
       if (newState.length >= MAX_MESSAGES) {
         newState.shift();
       }
@@ -39,17 +40,14 @@ const Chat: React.FC<IChatProps> = () => {
     console.log('>> useEffect');
     const socket = io('http://localhost:3001');
     socket.on('new-message', (chatMessage: ChatMessage) => {
-      console.log('messages in socket', chatMessage);
+      // for some reasons I couldn't do a simple setState here, so I used dispatch
       dispatch({ type: ReducerActionType.ADD_MESSAGE, payload: chatMessage });
     });
 
     return () => {
-      console.log('destruction');
       socket.removeAllListeners();
     };
   }, []);
-
-  console.log('messages', messages);
 
   // return to be changed with Threejs
   return (
