@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      Ouvre ta console... buche (j'avais pas le temps de faire une interface)
+    </p>
+    <p>
+      Le front n'est pas a reprendre, c'est pour que tu vérifies que ça marche
+      avant de l'intégrer
+    </p>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      const socket = io();
+      socket.on("new-message", (entry) => {
+        console.log("[username]:", entry.username);
+        console.log("[message]:", entry.message);
+        console.log("---");
+      });
+    </script>
+  </body>
+</html>
