@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { CtaButton } from '../Buttons/CtaButton';
+import Chat from '../Chat/Chat';
 import ScreenTitle from '../ScreenTitle/ScreenTitle';
 import { styled } from '../style/Style.config';
 import { ContainerFlex } from '../utils/ContainerFlex';
@@ -24,6 +25,9 @@ export function Jumbotron(props: IJumbotronProps) {
         <span>
           Je m'appelle <StyledBgTitre>Console_Buche</StyledBgTitre>
         </span>
+        {/* START: Not sure you will use it in here  */}
+        <Chat />
+        {/* END: Not sure you will use it in here  */}
       </ScreenTitle>
       <CtaButton />
     </ContainerFlex>
