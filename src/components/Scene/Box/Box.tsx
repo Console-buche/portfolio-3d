@@ -1,9 +1,9 @@
-import React, { useRef } from "react";
-import { Mesh } from "three";
+import React, { useRef } from 'react';
+import { Mesh } from 'three';
 
 interface IBoxProps {
   // velocity: number;
-  position: Mesh["position"];
+  position: Mesh['position'];
 }
 
 function Box(props: IBoxProps) {

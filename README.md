@@ -2,7 +2,7 @@
 
 Clône du portfolio de [David HCKH](https://david-hckh.com/) en React, Three.js et TypeScript
 
-Fait en stream sur Twitch
+Fait en stream sur [Twitch](https://www.twitch.tv/console_buche)
 
 ## Installation
 

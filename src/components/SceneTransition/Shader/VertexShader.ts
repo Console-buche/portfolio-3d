@@ -1,4 +1,4 @@
-import { glsl } from "../../../helpers/glsl";
+import { glsl } from '../../../helpers/glsl';
 
 export const vertexShader = glsl`
 varying vec2 vUv;

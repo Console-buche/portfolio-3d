@@ -1,30 +1,30 @@
-import { observer } from "mobx-react-lite";
-import * as React from "react";
-import { useStore } from "../../stores";
-import { styled, theme } from "../style/Style.config";
-import Card from "./Card";
-import { SlideshowButton } from "./SlideshowButtons";
-import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
-import { getOffsetXByIndex } from "./handlers";
+import { observer } from 'mobx-react-lite';
+import * as React from 'react';
+import { useStore } from '../../stores';
+import { styled, theme } from '../style/Style.config';
+import Card from './Card';
+import { SlideshowButton } from './SlideshowButtons';
+import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
+import { getOffsetXByIndex } from './handlers';
 
 interface ISlideSHowProps {}
 
-const StyledSlideShowContainer = styled("div", {
+const StyledSlideShowContainer = styled('div', {
   zIndex: -1,
-  alignItems: "center",
-  justifyContent: "center",
-  display: "flex",
-  flexDirection: "column",
-  gap: theme.space.defaultGap.value,
+  alignItems: 'center',
+  justifyContent: 'center',
+  display: 'flex',
+  flexDirection: 'column',
+  gap: theme.space.defaultGap.value
 });
 
-const StyledSlideShow = styled("div", {
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  height: "100%",
+const StyledSlideShow = styled('div', {
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  height: '100%',
   gap: 50,
-  transition: "0.25s transform ease",
+  transition: '0.25s transform ease'
 });
 
 function SlideShow(props: ISlideSHowProps) {
@@ -35,9 +35,7 @@ function SlideShow(props: ISlideSHowProps) {
 
   React.useEffect(() => {
     if (ref && ref.current) {
-      const widthAsNumber = +window
-        .getComputedStyle(ref.current)
-        .width.replace("px", "");
+      const widthAsNumber = +window.getComputedStyle(ref.current).width.replace('px', '');
 
       setSlideShowWidth(widthAsNumber);
     }
@@ -52,9 +50,9 @@ function SlideShow(props: ISlideSHowProps) {
             getOffsetXByIndex({
               cardCount: storePortfolio.cards.length,
               cardIndex: storePortfolio.getActiveCardPosition ?? 2,
-              slideShowWidth,
+              slideShowWidth
             }).offsetX
-          }px)`,
+          }px)`
         }}
       >
         {storePortfolio.cards.map((card, cardPosition) => (
@@ -72,18 +70,14 @@ function SlideShow(props: ISlideSHowProps) {
       </StyledSlideShow>
       <div
         style={{
-          display: "flex",
-          justifyContent: "center",
-          alignContent: "center",
-          gap: theme.size.buttonCircle.value,
+          display: 'flex',
+          justifyContent: 'center',
+          alignContent: 'center',
+          gap: 15
         }}
       >
-        <SlideshowButton>
-          {<AiOutlineArrowLeft color="white" size={24} />}
-        </SlideshowButton>
-        <SlideshowButton>
-          {<AiOutlineArrowRight color="white" size={24} />}
-        </SlideshowButton>
+        <SlideshowButton>{<AiOutlineArrowLeft color="white" size={24} />}</SlideshowButton>
+        <SlideshowButton>{<AiOutlineArrowRight color="white" size={24} />}</SlideshowButton>
       </div>
     </StyledSlideShowContainer>
   );

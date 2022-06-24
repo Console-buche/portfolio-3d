@@ -1,8 +1,8 @@
-import { createContext, useContext } from "react";
-import Store from "./StorePortfolio";
+import { createContext, useContext } from 'react';
+import Store from './StorePortfolio';
 
 export const stores = {
-  storePortfolio: Store,
+  storePortfolio: Store
 };
 
 export const StoreContext = createContext<typeof stores>(stores);

@@ -1,6 +1,6 @@
-import { action, computed, makeObservable, observable } from "mobx";
-import cardsData, { ICard } from "../data/cards";
-import TransitionDirection from "./types";
+import { action, computed, makeObservable, observable } from 'mobx';
+import cardsData, { ICard } from '../data/cards';
+import TransitionDirection from './types';
 
 interface IStorePortfolioOptions {
   slideshowData: ICard[];
@@ -10,9 +10,7 @@ export class StorePortfolio {
   private slideShowData = observable.array<ICard>([]);
   private activeCard = observable.box<string | null>(null);
   private activeCardPosition = observable.box<number | null>(null);
-  private $transitionDirection = observable.box<TransitionDirection>(
-    TransitionDirection.stopped
-  );
+  private $transitionDirection = observable.box<TransitionDirection>(TransitionDirection.stopped);
 
   constructor(options: IStorePortfolioOptions) {
     makeObservable(this);
@@ -24,7 +22,7 @@ export class StorePortfolio {
    * Actions
    */
   @action
-  updateSlideshowData(cards: IStorePortfolioOptions["slideshowData"]) {
+  updateSlideshowData(cards: IStorePortfolioOptions['slideshowData']) {
     this.slideShowData.replace(cards);
   }
 

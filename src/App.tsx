@@ -1,31 +1,23 @@
-import { styled } from "@stitches/react";
-import "antd/dist/antd.css";
-import { observer } from "mobx-react-lite";
-import React from "react";
-import Header from "./components/Header/Header";
-import MenuDrawer from "./components/MenuDrawer/MenuDrawer";
-import Scene from "./components/Scene/Scene";
-import SceneTransition from "./components/SceneTransition/SceneTransition";
-import ScreenContainer from "./components/ScreenContainer/ScreenContainer";
-import ScreenTitle from "./components/ScreenTitle/ScreenTitle";
-import Slideshow from "./components/Slideshow/Slideshow";
-import "./index.css";
+/* eslint-disable react/no-unescaped-entities */
+import { styled } from '@stitches/react';
+import 'antd/dist/antd.css';
+import { observer } from 'mobx-react-lite';
+import React from 'react';
+import Header from '@components/Header/Header';
+import MenuDrawer from '@components/MenuDrawer/MenuDrawer';
+import Scene from '@components/Scene/Scene';
+import SceneTransition from '@components/SceneTransition/SceneTransition';
+import ScreenContainer from '@components/ScreenContainer/ScreenContainer';
+import ScreenTitle from '@components/ScreenTitle/ScreenTitle';
+import Slideshow from '@components/Slideshow/Slideshow';
 
-const StyledAppContainer = styled("main", {
-  display: "flex",
-  flexDirection: "column",
-});
+import './index.css';
+import { Jumbotron } from './components/Jumbotron/Jumbotron';
+import { CursorPoint } from './components/Cursor/CursorPoint';
 
-const StyledNawak = styled("main", {
-  height: "100%",
-  width: "100%",
-  fontSize: "13rem",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  pointerEvents: "none",
-  flexDirection: "column",
-  fontFamily: "Fascinate",
+const StyledAppContainer = styled('main', {
+  display: 'flex',
+  flexDirection: 'column'
 });
 
 // REMINDER MERCI MOONCHAK LE LIEN VERS LE PORTFOLIO : https://david-hckh.com/
@@ -45,10 +37,7 @@ function App() {
       <MenuDrawer onClose={handleMenuClick} visible={isMenuOpen} />
       <StyledAppContainer>
         <ScreenContainer id="bureau" position="over">
-          <ScreenTitle>
-            <span>Hi my</span>
-            <span>name is Console_Buche</span>
-          </ScreenTitle>
+          <Jumbotron />
         </ScreenContainer>
         <ScreenContainer id="labo">Le labo avec les bulles</ScreenContainer>
         <ScreenContainer id="projets">
@@ -64,6 +53,7 @@ function App() {
           </ScreenTitle>
         </ScreenContainer>
       </StyledAppContainer>
+      <CursorPoint />
     </>
   );
 }
