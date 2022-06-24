@@ -2,7 +2,8 @@
   "name": "portfolio-3d",
   "version": "0.0.1",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite & npm run server:start",
+    "server:start": "node server/src/app.js",
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint src --ext .ts,.tsx",
