@@ -1,11 +1,17 @@
-require("dotenv").config();
+const path = require("path");
+
+const folderPath = path.join(__dirname, "..", ".env");
+require("dotenv").config({
+  path: folderPath
+});
 
 const { PORT } = process.env;
+
+const port = PORT || 3001;
 
 const express = require("express");
 const { Server } = require("socket.io");
 const http = require("http");
-const path = require("path");
 
 const app = express();
 const server = http.createServer(app);
@@ -20,6 +26,6 @@ io.on("connection", (socket) => {
   tmiWrapper(socket);
 });
 
-server.listen(PORT || 3001, () => {
-  console.log(`Server is running on port ${PORT}`);
+server.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });

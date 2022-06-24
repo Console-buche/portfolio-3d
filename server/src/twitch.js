@@ -9,7 +9,6 @@ module.exports = (socket) => {
 
   client.connect();
   client.on("message", (channel, tags, message, self) => {
-    console.log("messages");
     socket.emit("new-message", {
       username: tags.username,
       message,
