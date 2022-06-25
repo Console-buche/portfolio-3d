@@ -7,9 +7,9 @@
   },
   "name": "express_socket_io_tmi",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
-    "start": "node src/app.js",
+    "start": "ts-node-dev src/app.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
