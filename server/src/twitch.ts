@@ -12,7 +12,6 @@ export default (socket: Socket) => {
 
   client.connect();
   client.on('message', (_, tags, message) => {
-    console.log(tags);
     socket.emit('new-message', {
       username: tags['display-name'],
       color: tags.color,
