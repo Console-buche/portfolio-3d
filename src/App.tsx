@@ -14,10 +14,19 @@ import Slideshow from '@components/Slideshow/Slideshow';
 import './index.css';
 import { Jumbotron } from './components/Jumbotron/Jumbotron';
 import { CursorPoint } from './components/Cursor/CursorPoint';
+import Chat from './components/Chat';
 
 const StyledAppContainer = styled('main', {
   display: 'flex',
   flexDirection: 'column'
+});
+
+const StyledChatContainer = styled('span', {
+  position: 'fixed',
+  right: 10,
+  bottom: 10,
+  zIndex: 66666666
+  // background: 'lightsalmon'
 });
 
 // REMINDER MERCI MOONCHAK LE LIEN VERS LE PORTFOLIO : https://david-hckh.com/
@@ -34,6 +43,10 @@ function App() {
       <SceneTransition />
       <Scene isMenuOpen={isMenuOpen} />
       <Header onMenuButtonClicked={handleMenuClick} />
+      <StyledChatContainer>
+        <Chat />
+      </StyledChatContainer>
+
       <MenuDrawer onClose={handleMenuClick} visible={isMenuOpen} />
       <StyledAppContainer>
         <ScreenContainer id="bureau" position="over">
