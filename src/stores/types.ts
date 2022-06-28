@@ -1,7 +1,10 @@
-enum TransitionDirection {
+export enum TransitionDirection {
   up = 'up',
   down = 'down',
   stopped = 'stopped'
 }
 
-export default TransitionDirection;
+export enum ViewMode {
+  normal = 'normal',
+  twitchCam = 'twitchCam'
+}

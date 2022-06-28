@@ -1,6 +1,6 @@
 import { useLoader } from '@react-three/fiber';
 import * as React from 'react';
-import { CatmullRomCurve3, Vector3 } from 'three';
+import { CatmullRomCurve3, MeshBasicMaterial, TextureLoader, Vector3 } from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { bufferToVector3_neo } from '../../utils/bufferToVector3';
 
@@ -18,10 +18,12 @@ export function Office(props: IOfficeProps) {
     gltf.scene.scale.set(0.1, 0.1, 0.1);
     gltf.scene.position.set(position.x, position.y, position.z);
     gltf.scene.rotation.set(0, -1.25, 0);
-    gltf.scene.receiveShadow = true;
 
-    gltf.scene.children.forEach((node, i) => {
-      gltf.scene.children[i].receiveShadow = true;
+    //TODO : faire ça PROPRE !!!!!!!
+    const ecran = gltf.scene.children[1];
+    const mat = new TextureLoader().load('/src/assets/img/buche.jpg', (map) => {
+      const m = new MeshBasicMaterial({ map });
+      ecran.material = m;
     });
 
     // @ts-expect-error We should find the correct type for this

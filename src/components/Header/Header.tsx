@@ -1,6 +1,10 @@
+import { useStore } from '@/stores';
+import { ViewMode } from '@/stores/types';
 import { styled } from '@stitches/react';
+import { observer } from 'mobx-react-lite';
 import Assets from '../../assets/assets';
 import { ButtonMenu } from '../Buttons/ButtonMenu';
+import { handleViewModeToggle } from './handlers';
 
 interface IAppProps {
   onMenuButtonClicked: () => void;
@@ -24,11 +28,20 @@ const StyledContainerPadding = styled('div', {
 });
 
 function Header(props: IAppProps) {
+  const {
+    storePortfolio,
+    storePortfolio: { viewMode }
+  } = useStore();
   return (
     <StyledHeader id={'bureau'}>
       <StyledContainerPadding>
         <img src={Assets.pictures.logo} width={64} />
-        <menu style={{ display: 'flex' }}>
+        <menu style={{ display: 'flex', gap: 20, alignItems: 'center' }}>
+          <li>
+            <button onClick={handleViewModeToggle(storePortfolio)}>
+              {viewMode === ViewMode.normal ? 'View Screen' : 'Back to default'}
+            </button>
+          </li>
           <li>
             <ButtonMenu onClick={props.onMenuButtonClicked} />
           </li>
@@ -38,4 +51,4 @@ function Header(props: IAppProps) {
   );
 }
 
-export default Header;
+export default observer(Header);
