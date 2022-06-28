@@ -17,27 +17,42 @@ const StyledChat = styled('div', {
   width: 500,
   display: 'flex',
   flexDirection: 'column',
-  gap: 6
+  boxShadow: 'inset 0 0 78px',
+  padding: '10px',
+  '&::after': {
+    content: '',
+    position: 'absolute',
+    inset: 0,
+    opacity: 0.25,
+    backgroundImage: 'url("src/assets/img/cardboard.jpg")',
+    mixBlendMode: 'overlay'
+  }
 });
 
 const StyledMessage = styled('div', {
-  color: 'rgba(0,0,0,0.75)',
+  color: 'rgb(255, 168, 41)',
   fontSize: 18,
-  lineHeight: '1.2'
+  lineHeight: '1.2',
+  textShadow:
+    'rgb(255 168 41) 0px 0px 4px, rgb(255 168 41) 0px 0px 11px, rgb(255 168 41) 0px 0px 19px, rgb(153 94 15) 0px 0px 40px, rgb(153 94 15) 0px 0px 80px, rgb(153 94 15) 0px 0px 90px, rgb(153 94 15) 0px 0px 100px, rgb(153 94 15) 0px 0px 150px',
+  animation: 'flickerMessage 1.5s infinite'
 });
 
 const Div = styled('div', {
-  background: 'rgb(255,255,255, 0.85)',
-  padding: '10px 15px',
+  padding: '6px 15px',
   borderRadius: 16,
   display: 'flex',
-  flexDirection: 'column',
-  gap: 2
+  gap: 8
 });
 
 const StyledUsername = styled('span', {
   fontWeight: 'bold',
-  fontSize: 14
+  fontSize: 15,
+  color: 'var(--clr-username, #fff)',
+  textShadow:
+    'var(--clr-username, #fff) 0px 0px 4px, var(--clr-username, #fff) 0px 0px 11px, var(--clr-username, #fff) 0px 0px 19px, rgb(153 94 15) 0px 0px 40px, rgb(153 94 15) 0px 0px 80px, rgb(153 94 15) 0px 0px 90px, rgb(153 94 15) 0px 0px 100px, rgb(153 94 15) 0px 0px 150px',
+  animation: 'flickerUsername 1.5s infinite',
+  whiteSpace: 'nowrap'
 });
 
 const Chat: React.FC<IChatProps> = () => {
@@ -60,7 +75,9 @@ const Chat: React.FC<IChatProps> = () => {
       {messages.reverse().map((message, index) => {
         return (
           <Div key={index}>
-            <StyledUsername css={{ color: message.color }}>{message.username}</StyledUsername>
+            <StyledUsername style={{ '--clr-username': message.color } as React.CSSProperties}>
+              {message.username} &gt;
+            </StyledUsername>
             <StyledMessage>{message.message}</StyledMessage>
           </Div>
         );
