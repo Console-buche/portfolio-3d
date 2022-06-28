@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { CtaButton } from '../Buttons/CtaButton';
+import Chat from '../Chat';
 import ScreenTitle from '../ScreenTitle/ScreenTitle';
 import { styled } from '../style/Style.config';
 import { ContainerFlex } from '../utils/ContainerFlex';

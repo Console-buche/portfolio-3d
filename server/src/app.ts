@@ -13,7 +13,11 @@ const { PORT } = process.env;
 
 const app = express();
 const server = createServer(app);
-const io = new Server(server);
+const io = new Server(server, {
+  cors: {
+    origin: '*'
+  }
+});
 
 const publicPath = join(__dirname, '..', 'public');
 app.use(Static(publicPath));
