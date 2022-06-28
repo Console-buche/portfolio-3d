@@ -24,7 +24,7 @@ const StyledChat = styled('div', {
     position: 'absolute',
     inset: 0,
     opacity: 0.25,
-    backgroundImage: 'url("src/assets/img/cardboard.jpg")',
+    backgroundImage: 'url("src/assets/img/texture-chat.jpg")',
     mixBlendMode: 'overlay'
   }
 });
