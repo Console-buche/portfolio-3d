@@ -17,31 +17,43 @@ const StyledChat = styled('div', {
   width: 500,
   display: 'flex',
   flexDirection: 'column',
-  gap: 15
+  boxShadow: 'inset 0 0 78px',
+  padding: '10px',
+  '&::after': {
+    content: '',
+    position: 'absolute',
+    inset: 0,
+    opacity: 0.25,
+    backgroundImage: 'url("src/assets/img/texture-chat.jpg")',
+    mixBlendMode: 'overlay'
+  }
 });
 
 const StyledMessage = styled('div', {
-  color: 'rgba(0,0,0,0.4)'
+  color: 'rgb(255, 168, 41)',
+  fontSize: 18,
+  lineHeight: '1.2',
+  textShadow:
+    'rgb(255 168 41) 0px 0px 4px, rgb(255 168 41) 0px 0px 11px, rgb(255 168 41) 0px 0px 19px, rgb(153 94 15) 0px 0px 40px, rgb(153 94 15) 0px 0px 80px, rgb(153 94 15) 0px 0px 90px, rgb(153 94 15) 0px 0px 100px, rgb(153 94 15) 0px 0px 150px',
+  animation: 'flickerMessage 1.5s infinite'
 });
 
 const Div = styled('div', {
-  background: 'rgb(255,255,255)',
-  padding: '10px 5px',
-  borderRadius: 20,
+  padding: '6px 15px',
+  borderRadius: 16,
   display: 'flex',
-  gap: 10
+  gap: 8
 });
 
 const StyledUsername = styled('span', {
-  textTransform: 'uppercase',
-  fontWeight: 'bold'
+  fontWeight: 'bold',
+  fontSize: 15,
+  color: 'var(--clr-username, #fff)',
+  textShadow:
+    'var(--clr-username, #fff) 0px 0px 4px, var(--clr-username, #fff) 0px 0px 11px, var(--clr-username, #fff) 0px 0px 19px, rgb(153 94 15) 0px 0px 40px, rgb(153 94 15) 0px 0px 80px, rgb(153 94 15) 0px 0px 90px, rgb(153 94 15) 0px 0px 100px, rgb(153 94 15) 0px 0px 150px',
+  animation: 'flickerUsername 1.5s infinite',
+  whiteSpace: 'nowrap'
 });
-
-const min = 0;
-const max = 1;
-
-// Clamp number between two values with the following line:
-const clamp = (num: number, min: number, max: number) => Math.min(Math.max(num, min), max);
 
 const Chat: React.FC<IChatProps> = () => {
   const [messages, setMessages] = React.useState<ChatMessage[]>([]);
@@ -62,13 +74,10 @@ const Chat: React.FC<IChatProps> = () => {
     <StyledChat>
       {messages.reverse().map((message, index) => {
         return (
-          <Div
-            key={index}
-            css={{
-              opacity: clamp(2 - messages.length / (messages.length - index), min, max)
-            }}
-          >
-            <StyledUsername css={{ color: message.color }}>{message.username}</StyledUsername>
+          <Div key={index}>
+            <StyledUsername style={{ '--clr-username': message.color } as React.CSSProperties}>
+              {message.username} &gt;
+            </StyledUsername>
             <StyledMessage>{message.message}</StyledMessage>
           </Div>
         );
