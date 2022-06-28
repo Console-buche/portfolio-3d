@@ -17,31 +17,28 @@ const StyledChat = styled('div', {
   width: 500,
   display: 'flex',
   flexDirection: 'column',
-  gap: 15
+  gap: 6
 });
 
 const StyledMessage = styled('div', {
-  color: 'rgba(0,0,0,0.4)'
+  color: 'rgba(0,0,0,0.75)',
+  fontSize: 18,
+  lineHeight: '1.2'
 });
 
 const Div = styled('div', {
-  background: 'rgb(255,255,255)',
-  padding: '10px 5px',
-  borderRadius: 20,
+  background: 'rgb(255,255,255, 0.85)',
+  padding: '10px 15px',
+  borderRadius: 16,
   display: 'flex',
-  gap: 10
+  flexDirection: 'column',
+  gap: 2
 });
 
 const StyledUsername = styled('span', {
-  textTransform: 'uppercase',
-  fontWeight: 'bold'
+  fontWeight: 'bold',
+  fontSize: 14
 });
-
-const min = 0;
-const max = 1;
-
-// Clamp number between two values with the following line:
-const clamp = (num: number, min: number, max: number) => Math.min(Math.max(num, min), max);
 
 const Chat: React.FC<IChatProps> = () => {
   const [messages, setMessages] = React.useState<ChatMessage[]>([]);
@@ -62,12 +59,7 @@ const Chat: React.FC<IChatProps> = () => {
     <StyledChat>
       {messages.reverse().map((message, index) => {
         return (
-          <Div
-            key={index}
-            css={{
-              opacity: clamp(2 - messages.length / (messages.length - index), min, max)
-            }}
-          >
+          <Div key={index}>
             <StyledUsername css={{ color: message.color }}>{message.username}</StyledUsername>
             <StyledMessage>{message.message}</StyledMessage>
           </Div>
