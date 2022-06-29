@@ -53,3 +53,32 @@ li {
   /* display: none; */
   /* width:0; */
 }
+
+
+@keyframes flickerMessage {
+    
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+
+      text-shadow:
+      rgb(255 168 41) 0px 0px 4px, rgb(255 168 41) 0px 0px 11px, rgb(255 168 41) 0px 0px 19px, rgb(153 94 15) 0px 0px 40px, rgb(153 94 15) 0px 0px 80px, rgb(153 94 15) 0px 0px 90px, rgb(153 94 15) 0px 0px 100px, rgb(153 94 15) 0px 0px 150px;
+  
+  }
+  
+  20%, 24%, 55% {        
+      text-shadow: none;
+  }    
+}
+
+@keyframes flickerUsername {
+    
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+
+      text-shadow:
+      var(--clr-username, #fff) 0px 0px 4px, var(--clr-username, #fff) 0px 0px 11px, var(--clr-username, #fff) 0px 0px 19px, rgb(153 94 15) 0px 0px 40px, rgb(153 94 15) 0px 0px 80px, rgb(153 94 15) 0px 0px 90px, rgb(153 94 15) 0px 0px 100px, rgb(153 94 15) 0px 0px 150px;
+  
+  }
+  
+  20%, 24%, 55% {        
+      text-shadow: none;
+  }    
+}
