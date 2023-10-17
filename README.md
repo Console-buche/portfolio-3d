@@ -1,8 +1,6 @@
 # Portfolio 3D
 
-Clône du portfolio de [David HCKH](https://david-hckh.com/) en React, Three.js et TypeScript
-
-Fait en stream sur [Twitch](https://www.twitch.tv/console_buche)
+Clône du portfolio de [AboutRam](https://AboutRam.com/) en React, Three.js et TypeScript
 
 ## Installation
 
